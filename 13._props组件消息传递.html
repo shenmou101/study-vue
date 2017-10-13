@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1>我是一个主标题</h1>
+    <input type="button" v-on:click="add" value="增加">
+    <my-component v-bind:a="a"></my-component>
+
+</div>
+
+
+<script src="js/vue2.4.4.js"></script>
+<script>
+
+    Vue.component('my-component',{
+      template: '<div>子组件 {{a}}</div>',
+      props: ['a']
+    });
+
+    new Vue({
+      el: '#container',
+      data: {
+        a : 999
+      },
+      methods: {
+        add: function () {
+          this.a ++;
+        }
+      }
+    });
+
+</script>
+
+</body>
+</html>
