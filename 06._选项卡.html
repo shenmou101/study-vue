@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #tab {
+            width: 360px;
+            height: 360px;
+            border: 1px solid #000000;
+            margin: 100px auto;
+        }
+        #tab .hd span {
+            float: left;
+            width: 120px;
+            line-height: 40px;
+            background-color: #eee;
+            text-align: center;
+            font-size: 16px;
+            font-weight:bold;
+        }
+        #tab .hd span.cur{
+            background-color: orange;
+        }
+        #tab .bd div {
+            width: 360px;
+            height: 260px;
+        }
+    </style>
+</head>
+<body>
+    <div id="tab">
+        <div class="hd">
+            <span v-bind:class="{cur: lanmu=='xinwen'}" v-on:click="change('xinwen')">新闻</span>
+            <span v-bind:class="{cur: lanmu=='tupian'}" v-on:click="change('tupian')">图片</span>
+            <span v-bind:class="{cur: lanmu=='junshi'}" v-on:click="change('junshi')">军事</span>
+        </div>
+        <div class="bd">
+            <div class="xinwen" v-show="lanmu == 'xinwen'">我是新闻</div>
+            <div class="tupian" v-show="lanmu == 'tupian'">我是图片</div>
+            <div class="junshi" v-show="lanmu == 'junshi'">我是军事</div>
+        </div>
+    </div>
+
+    <script src="js/vue2.4.4.js"></script>
+    <script>
+        new Vue({
+          el: "#tab",
+          data:{
+            lanmu: 'xinwen'
+          },
+          methods: {
+            change: function (str) {
+              this.lanmu = str
+            }
+          }
+        })
+    </script>
+</body>
+</html>

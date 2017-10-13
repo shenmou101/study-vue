@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #tab {
+            width: 360px;
+            height: 360px;
+            border: 1px solid #000000;
+            margin: 100px auto;
+        }
+        #tab .hd span {
+            float: left;
+            width: 120px;
+            line-height: 40px;
+            background-color: #eee;
+            text-align: center;
+            font-size: 16px;
+            font-weight:bold;
+        }
+        #tab .hd span.cur{
+            background-color: orange;
+        }
+        #tab .bd div {
+            width: 360px;
+            height: 260px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <template v-for="(item, index) in list" track-by="xuehao">
+                <li>
+                    <b>{{index}} {{item.xingming}}</b>
+                    <b>{{item.age}}</b>
+                    <b>{{item.sex}}</b>
+                </li>
+            </template>
+        </ul>
+        <!--filter-->
+        <hr>
+        <h4>filter过滤 男生</h4>
+        <ul>
+            <li v-for="item in nansheng">{{item.xingming}}</li>
+            <!--重复渲染5次●-->
+            <p v-for="n in 5">●</p>
+        </ul>
+    </div>
+
+    <script src="js/vue2.4.4.js"></script>
+    <script>
+        new Vue({
+          el: ".box",
+          data:{
+            list: [
+              {xingming : '小明', age : 12, sex : '男', xuehao: '10001'},
+              {xingming : '小红', age : 13, sex : '女', xuehao: '10002'},
+              {xingming : '小白', age : 14, sex : '男', xuehao: '10003'},
+              {xingming : '小白', age : 14, sex : '男', xuehao: '10003'},
+            ]
+          },
+          computed: {
+            nansheng: function () {
+              return this.list.filter(function (item) {
+                console.log(item.age);
+                return item.sex === '男'
+              })
+            }
+          }
+        })
+    </script>
+</body>
+</html>

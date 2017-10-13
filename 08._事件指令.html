@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .innerBox{
+            width: 200px;
+            height: 200px;
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h1>{{x}}, {{y}}</h1>
+        <div class="innerBox" v-on:mousemove.stop="moveHandler($event)"></div>
+        <hr>
+        <input type="text" @keyup.13="zhuce">
+    </div>
+
+    <script src="js/vue2.4.4.js"></script>
+    <script>
+        var vue = new Vue({
+          el: "#box",
+          data:{
+            x: 0,
+            y: 0
+          },
+          methods: {
+            moveHandler: function (event) {
+              this.x = event.offsetX;
+              this.y = event.offsetY;
+              console.log(this.x,this.y)
+            },
+            zhuce: function () {
+              alert('注冊了')
+            }
+          }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <input type="checkbox" v-model="isshow"> 显示更多内容
+        <div id="content">
+            <!--<div class="template" v-if="isshow">
+                <p>内容</p>
+                <p>内容</p>
+                <p>内容</p>
+                <p>内容</p>
+                <p>内容</p>
+            </div>-->
+            <!--如果不想让判断所在的父级元素出现可用template元素-->
+            <template v-if="isshow">
+                <p>内容</p>
+                <p>内容</p>
+                <p>内容</p>
+                <p>内容</p>
+                <p>内容</p>
+            </template>
+        </div>
+    </div>
+    <script src="js/vue2.4.4.js"></script>
+    <script>
+        new Vue({
+          el: "#box",
+          data:{
+            'isshow': true
+          }
+        })
+    </script>
+</body>
+</html>

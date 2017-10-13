@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    {{add1}}
+    <input type="number" v-model.number="a" >
+
+    <!--单选框 v-model-->
+    <br>
+    <br>
+    <br>
+    <input type="radio" v-model="sex" value="男" name="sex">男
+    <input type="radio" v-model="sex" value="女" name="sex">女
+    <br>
+    你的性别是 {{sex}}
+
+    <!--复选框 布尔值-->
+    <br>
+    <br>
+    <br>
+    <input type="checkbox" v-model="viewmore" name="viewmore">查看更多
+    <br>
+    {{viewmore}}
+
+    <!--复选框 数组-->
+    <br>
+    <br>
+    <br>
+    爱好：
+    <input type="checkbox" v-model="hobby" name="hobby" value="篮球">篮球
+    <input type="checkbox" v-model="hobby" name="hobby" value="足球">足球
+    <input type="checkbox" v-model="hobby" name="hobby" value="网球">网球
+    <br>
+    <!--hobby必须在data中设置为空数组-->
+    {{hobby}}
+
+    <!--下拉 v-model-->
+    <br>
+    <br>
+    <br>
+    <select name="" v-model="jiguan">
+        <option value="beijing" selected>北京</option>
+        <option value="shanghai">上海</option>
+        <option value="shenzhen">深圳</option>
+    </select>
+    <br>
+    你的籍贯：{{jiguan}}
+
+    <!--下拉多选 multiple-->
+    <br>
+    <br>
+    <br>
+    <select name="" v-model="jiguan2" multiple>
+        <option value="beijing">北京</option>
+        <option value="shanghai">上海</option>
+        <option value="shenzhen">深圳</option>
+    </select>
+    <br>
+    你的籍贯：{{jiguan2}}
+
+    <!--v-bind:true-value-->
+    <br>
+    <br>
+    <br>
+    您是否成年：
+    <input type="checkbox" v-model="chengnian" v-bind:true-value="c" v-bind:false-value="b">
+    结果：{{chengnian}}
+
+    <!--懒加载 避免input被频繁的监听 只在blur时监听值的改变-->
+    <br>
+    <br>
+    <br>
+    <input type="text" v-model.lazy="lazy">
+    {{lazy}}
+
+    <!--延迟加载 -->
+    <br>
+    <br>
+    <br>
+    <input type="text" v-model="debounce" debounce="1000">
+    {{lazy}}
+</div>
+
+<script src="js/vue2.4.4.js"></script>
+<script>
+    var vue = new Vue({
+      el: '#box',
+      data:{
+        a: 1,
+        sex: '',
+        viewmore: false,
+        hobby: [],   //必须在data中设置为数组
+        jiguan: 'beijing',
+        jiguan2: [],
+        chengnian: null,
+        c:'成年',
+        b:'未成年',
+        lazy: '',
+        debounce: ''
+      },
+      computed: {
+        add1: function () {
+          return this.a+1
+        }
+      }
+    })
+</script>
+
+</body>
+</html>

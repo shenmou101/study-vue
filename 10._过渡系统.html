@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .sbox {
+            width: 200px;
+            height: 200px;
+            background: orange;
+        }
+        .slide-fade-enter-active {
+            transition: all .3s ease;
+        }
+        .slide-fade-leave-active {
+            transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+        }
+        .slide-fade-enter, .slide-fade-leave-to
+            /* .slide-fade-leave-active for below version 2.1.8 */ {
+            transform: rotate(360deg);
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <input type="button" v-on:click="show = !show" value="显示/隐藏">
+    <transition name="slide-fade" v-on:enter="enter" v-on:after-enter="afterEnter">
+        <p class="sbox" v-if="show">hello</p>
+    </transition>
+</div>
+
+<script src="js/vue2.4.4.js"></script>
+<script>
+    var vue = new Vue({
+      el: '#box',
+      data:{
+        show: false,
+      },
+      methods:{
+        toggle: function () {
+          
+        },
+        enter: function (el) {
+          console.log('过渡动画即将开始',el)
+        },
+        afterEnter: function (el) {
+          console.log('过渡动画已完成',el)
+        }
+      }
+    })
+</script>
+
+</body>
+</html>
