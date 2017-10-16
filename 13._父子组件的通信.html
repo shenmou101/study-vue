@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1>购物车</h1>
+    <my-item v-for="item in sales" v-bind:type="item.type" v-bind:price="item.price"></my-item>
+
+    <h3>总价格：{{total}}</h3>
+</div>
+
+
+<script src="js/vue2.4.4.js"></script>
+<script>
+
+    Vue.component('my-item',{
+      template: '<div>{{type}} 价格：{{price}} <input type="button" @click="buy" value="购买"> 购买的数量：{{amount}}</div>',
+      props: ['type','price'],
+      data: function () {
+        return {
+          amount: 0
+        }
+      },
+      methods: {
+        buy: function () {
+            this.amount++
+        }
+      }
+    });
+
+    new Vue({
+      el: '#container',
+      computed: {
+        total: function () {
+          console.log(222);
+          var sum = 0;
+          for(var i = 0; i < this.$children.length; i++ ){
+            sum+= this.$children[i].price * this.$children[i].amount;
+          }
+          return sum
+        }
+      },
+      data: {
+        sales: [
+          {type: '电脑', price: 3000},
+          {type: '书包', price: 200},
+          {type: '鼠标', price: 40},
+        ]
+      }
+    })
+
+</script>
+
+</body>
+</html>
