@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1>购物车</h1>
+    <my-item v-for="item in sales" v-bind:item="item"></my-item>
+
+    <h3>清单</h3>
+    <ul>
+        <li v-for="item in sales">{{item.type}}：{{item.price}} × {{item.amount}} = {{item.price * item.amount}}</li>
+    </ul>
+    <h3>总价格：{{sum}}</h3>
+</div>
+
+
+<script src="js/vue2.4.4.js"></script>
+<script>
+
+    // 父子组件双向绑定有捷径，无需.sync
+    // 就是通过向子组件传递一个引用类型变量，在子组件中改变该变量的值，就可以同步改变父组件中的值
+
+    Vue.component('my-item',{
+      template: '<div>{{item.type}} 价格：{{item.price}} <input type="button" v-on:click="buy" value="购买"> 购买的数量：{{item.amount}}</div>',
+      props: ['item'],
+      methods: {
+        buy: function () {
+            this.item.amount++;
+        }
+      }
+    });
+
+    new Vue({
+      el: '#container',
+      methods: {
+        total: function () {
+          console.log(this.$children);
+          this.sum = 0;
+          this.qingdan = [];
+          for(var i = 0; i < this.$children.length; i++ ){
+            this.sum += this.$children[i].price * this.$children[i].amount;
+            this.qingdan.push(this.$children[i])
+          }
+        }
+      },
+      data: {
+        sales: [
+          {type: '电脑', price: 3000, amount: 0},
+          {type: '书包', price: 200, amount: 0},
+          {type: '鼠标', price: 40, amount: 0}
+        ]
+      },
+      computed: {
+          sum: function () {
+              var total = 0;
+              for(var i = 0; i < this.sales.length; i++){
+                  total += this.sales[i].price * this.sales[i].amount;
+              }
+              return total;
+          }
+      }
+    })
+
+</script>
+
+</body>
+</html>
