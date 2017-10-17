@@ -10,17 +10,26 @@
 <body>
 <div id="container">
     <h1>购物车</h1>
-    <my-item v-for="item in sales" v-bind:type="item.type" v-bind:price="item.price"></my-item>
+    <my-item v-for="item in sales" v-bind:type="item.type" v-on:buyone="total" v-bind:price="item.price"></my-item>
 
-    <h3>总价格：{{total}}</h3>
+    <h3>清单</h3>
+    <ul>
+        <li v-for="item in qingdan">{{item.type}}：{{item.price}} × {{item.amount}} = {{item.price * item.amount}}</li>
+    </ul>
+    <h3>总价格：{{sum}}</h3>
 </div>
 
 
 <script src="js/vue2.4.4.js"></script>
 <script>
 
+    //2.X版本中，Props 现在只能单向传递。为了对父组件产生反向影响，子组件需要显式地传递一个事件而不是依赖于隐式地双向绑定
+    // 父组件使用 prop 传递数据给子组件。但子组件怎么跟父组件通信呢？这个时候 Vue 的自定义事件系统就派得上用场了。
+    // 使用 $on(eventName) 监听事件
+    // 使用 $emit(eventName) 触发事件
+
     Vue.component('my-item',{
-      template: '<div>{{type}} 价格：{{price}} <input type="button" @click="buy" value="购买"> 购买的数量：{{amount}}</div>',
+      template: '<div>{{type}} 价格：{{price}} <input type="button" v-on:click="buy" value="购买"> 购买的数量：{{amount}}</div>',
       props: ['type','price'],
       data: function () {
         return {
@@ -29,21 +38,23 @@
       },
       methods: {
         buy: function () {
-            this.amount++
+            this.amount++;
+            this.$emit('buyone')        //父子通信的关键，向父级发射事件
         }
       }
     });
 
     new Vue({
       el: '#container',
-      computed: {
+      methods: {
         total: function () {
-          console.log(222);
-          var sum = 0;
+          console.log(this.$children);
+          this.sum = 0;
+          this.qingdan = [];
           for(var i = 0; i < this.$children.length; i++ ){
-            sum+= this.$children[i].price * this.$children[i].amount;
+            this.sum += this.$children[i].price * this.$children[i].amount;
+            this.qingdan.push(this.$children[i])
           }
-          return sum
         }
       },
       data: {
@@ -51,7 +62,9 @@
           {type: '电脑', price: 3000},
           {type: '书包', price: 200},
           {type: '鼠标', price: 40},
-        ]
+        ],
+        sum: 0,
+        qingdan: []
       }
     })
 
