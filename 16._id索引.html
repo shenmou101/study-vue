@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <my-item></my-item>
+    <my-item ref=""></my-item>
+    <my-item></my-item>
+    <my-item></my-item>
+</div>
+
+
+<script src="js/vue2.4.4.js"></script>
+<script>
+    Vue.component("my-item", {
+      template: '<span>子组件</span>',
+      methods: {
+        fasong: function () {
+          this.$emit("msg", 100)
+        }
+      }
+    });
+
+    new Vue({
+      el: '#container',
+      methods: {
+        jieshou: function (msg) {
+          alert(msg)
+        }
+      }
+    })
+
+</script>
+
+</body>
+</html>
