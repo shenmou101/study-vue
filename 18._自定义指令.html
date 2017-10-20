@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div v-my-direc="color">试试看文字变成什么颜色</div>
+</div>
+
+
+<script src="js/vue2.4.4.js"></script>
+<script>
+
+  //注册这个指令
+  Vue.directive("my-direc", function (el, binding) {
+    console.log(binding);
+    el.style.color = binding.value
+
+  });
+
+  new Vue({
+    el: "#container",
+    data: {
+      color: "blue"
+    }
+  })
+
+</script>
+
+</body>
+</html>
