@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .v-link-active{
+      background-color: orange;
+    }
+    a {
+      float: left;
+      width: 120px;
+      border: 1px solid red;
+      height:30px;
+      line-height:30px;
+      text-align: center;
+      margin-right: 20px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    .cl{clear: both}
+  </style>
 </head>
 <body>
-
-<script src="./dist/bundle.js"></script>
+<div id="app">
+  <h1>Hello App!</h1>
+  <p>
+    <!-- 使用指令 v-link 进行导航。 -->
+    <a v-link="'/yinyue'">去音乐栏目</a>
+    <a v-link="'/xinwen'">去新闻栏目</a>
+  </p>
+  <div class="cl"></div>
+  <!-- 路由外链 -->
+  <router-view></router-view>
+</div>
+<script src="dist/bundle.js"></script>
 </body>
 </html>
