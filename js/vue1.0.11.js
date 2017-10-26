@@ -926,7 +926,7 @@
     _delimitersChanged: true,
 
     /**
-     * List of asset types that a component can own.
+     * List of assets types that a component can own.
      *
      * @type {Array}
      */
@@ -1898,7 +1898,7 @@
   }
 
   /**
-   * Resolve an asset.
+   * Resolve an assets.
    * This function is used because child instances need access
    * to assets defined in its ancestor chain.
    *
@@ -1923,7 +1923,7 @@
   }
 
   /**
-   * Assert asset exists
+   * Assert assets exists
    */
 
   function assertAsset(val, type, id) {
@@ -8431,7 +8431,7 @@
       Sub['super'] = Super;
       // allow further extension
       Sub.extend = Super.extend;
-      // create asset registers, so extended classes
+      // create assets registers, so extended classes
       // can have their private assets too.
       config._assetTypes.forEach(function (type) {
         Sub[type] = Super[type];
@@ -8493,7 +8493,7 @@
     };
 
     /**
-     * Create asset registration methods with the following
+     * Create assets registration methods with the following
      * signature:
      *
      * @param {String} id
@@ -9285,7 +9285,7 @@
 
   var digitsRE = /(\d{3})(?=\d)/g;
 
-  // asset collections must be a plain object.
+  // assets collections must be a plain object.
   var filters = {
 
     orderBy: orderBy,

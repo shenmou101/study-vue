@@ -93,15 +93,39 @@ var Guojixinwen = Vue.extend({
   template: "<p>我是国际新闻</p>"
 });
 var Guoneixinwen = Vue.extend({
-  template: "<p>我是国内新闻</p>"
+  template: "<p>我是国内新闻  {{$route.params.a}}</p>"
 });
 
 var Xinwen = {
   template: '<p>我是新闻栏目!</p><router-view></router-view>'
 };
 
+var Xinxixiugai = {
+  template: '<p>个人信息修改</p>'
+};
+
+var Xuesheng = {
+  template: '<h1>学生信息查询 学号：{{$route.params.xuehao}}</h1>',
+  data: function () {
+    return {
+
+    }
+  }
+};
+
+
 //定义根组件
-var App = {};
+var App = {
+  data : function () {
+    return{
+      xueshengArr : [
+        {xingming: '小明', xuehao: 10001},
+        {xingming: '小红', xuehao: 10002},
+        {xingming: '小刚', xuehao: 10003}
+      ]
+    }
+  }
+};
 
 //创造一个router的实例
 //你可以构造函数中传入一些参数
@@ -112,6 +136,10 @@ var router = new VueRouter();
 // 创建的组件构造函数，也可以是一个组件选项对象。
 // 稍后我们会讲解嵌套路由
 router.map({
+  '/xuesheng/:xuehao': {
+    name: 'xuesheng',
+    component: Xuesheng
+  },
   '/xinwen': {
     component: Xinwen,
     subRoutes: {
@@ -120,8 +148,9 @@ router.map({
           template: "<p>你没有选择子栏目!!</p>"
         }
       },
-      "/guonei": {
-        component: Guoneixinwen
+      "/guonei/:a": {
+        component: Guoneixinwen,
+        xuyaodenglu: false
       },
       "/guoji": {
         component: Guojixinwen
@@ -130,7 +159,29 @@ router.map({
   },
   '/yinyue': {
     component: Yinyue
+  },
+  '/xinxixiugai':{
+    component: Xinxixiugai,
+    xuyaodenglu: true
+  },
+  '/login':{
+    component: {
+      template: '<p>对不起，页面需要登录！！</p>'
+    }
   }
+});
+
+//全局登录状态
+var login = false;
+
+//定义一个beforeEach函数，这个函数在路由变化的时候发生，是vue-router给router定义的函数
+router.beforeEach(function (transition) {
+  console.log(transition);
+  if(transition.to.xuyaodenglu && !login){
+    transition.redirect('/login');
+    return;
+  }
+  transition.next()
 });
 
 router.start(App, '#app');
@@ -1213,7 +1264,7 @@ var config = Object.defineProperties({
   _delimitersChanged: true,
 
   /**
-   * List of asset types that a component can own.
+   * List of assets types that a component can own.
    *
    * @type {Array}
    */
@@ -2174,7 +2225,7 @@ function mergeOptions(parent, child, vm) {
 }
 
 /**
- * Resolve an asset.
+ * Resolve an assets.
  * This function is used because child instances need access
  * to assets defined in its ancestor chain.
  *
@@ -10067,7 +10118,7 @@ function contains(val, search) {
 
 var digitsRE = /(\d{3})(?=\d)/g;
 
-// asset collections must be a plain object.
+// assets collections must be a plain object.
 var filters = {
 
   orderBy: orderBy,
@@ -10263,7 +10314,7 @@ function installGlobalAPI (Vue) {
     Sub['super'] = Super;
     // allow further extension
     Sub.extend = Super.extend;
-    // create asset registers, so extended classes
+    // create assets registers, so extended classes
     // can have their private assets too.
     config._assetTypes.forEach(function (type) {
       Sub[type] = Super[type];
@@ -10327,7 +10378,7 @@ function installGlobalAPI (Vue) {
   };
 
   /**
-   * Create asset registration methods with the following
+   * Create assets registration methods with the following
    * signature:
    *
    * @param {String} id
