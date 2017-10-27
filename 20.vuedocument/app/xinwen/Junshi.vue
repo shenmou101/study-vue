@@ -14,13 +14,18 @@
   export default {
     data(){
       return {
-        xinwenlist: [
-          {"id": 1, "title": "巴拿马发生恐怖袭击，丧生3人"},
-          {"id": 2, "title": "巴拿马发生恐怖袭击，丧生3人"},
-          {"id": 3, "title": "巴拿马发生恐怖袭击，丧生3人"},
-          {"id": 4, "title": "巴拿马发生恐怖袭击，丧生3人"}
-        ]
+        xinwenlist: []
       }
+    },
+    created(){
+      var self = this;
+      $.get("/api/news.json", function (data) {
+        self.xinwenlist = data;
+        //console.log('this.xinwenlist =',this.xinwenlist)
+      });
+    },
+    ready(){
+      $("ul").css({"position":"relative"}).animate({"left": 300}, 9000)
     }
   }
 </script>

@@ -1,5 +1,6 @@
 var Vue = require("vue");
 var VueRouter = require("vue-router");
+var routerConfig = require("./router.config.js");
 Vue.use(VueRouter);
 
 // 路由器需要一个根组件。
@@ -14,36 +15,7 @@ var router = new VueRouter();
 // 每条路由规则应该映射到一个组件。这里的“组件”可以是一个使用 Vue.extend
 // 创建的组件构造函数，也可以是一个组件选项对象。
 // 稍后我们会讲解嵌套路由
-router.map({
-  '/xinwen': {
-    name: 'xinwen',
-    component: require("./xinwen/Xinwen.vue"),
-    subRoutes: {
-      '/junshi': {
-        name: 'junshi',
-        component: require('./xinwen/Junshi.vue'),
-        subRoutes: {
-          '/:bianhao': {
-            name: 'junshiwenzhang',
-            component: require('./xinwen/Junshiwenzhang.vue')
-          }
-        }
-      },
-      '/yule': {
-        name: 'yule',
-        component: require('./xinwen/Yule.vue')
-      },
-      '/guoji': {
-        name: 'guoji',
-        component: require('./xinwen/Guoji.vue')
-      }
-    }
-  },
-  '/yinyue': {
-    name: 'yinyue',
-    component: require("./Yinyue.vue"),
-  },
-});
+router.map(routerConfig);
 
 // 现在我们可以启动应用了！
 // 路由器会创建一个 App 实例，并且挂载到选择符 #app 匹配的元素上。
