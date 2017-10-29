@@ -25,7 +25,7 @@ var routerList = {
   },
   '/yinyue': {
     name: 'yinyue',
-    component: require("./Yinyue.vue"),
+    component: require("./yinyue/Yinyue.vue"),
   }
 };
 

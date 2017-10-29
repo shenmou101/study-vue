@@ -11,8 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "vue": "^1.0.28",
-    "vue-router": "^0.7.13"
-  },
+    "vue-router": "^0.7.13",
+    "vue-resource": "1.1.0",
+    "vue-validator": "^2.0.0"
+},
   "devDependencies": {
     "vue-loader": "^8.0.0",
     "babel-core": "^6.8.0",

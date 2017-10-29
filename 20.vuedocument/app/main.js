@@ -1,7 +1,13 @@
 var Vue = require("vue");
 var VueRouter = require("vue-router");
 var routerConfig = require("./router.config.js");
+var VueResource = require("vue-resource");
+var VueValidator = require('vue-validator');
+
+//使用插件
 Vue.use(VueRouter);
+Vue.use(VueResource);
+Vue.use(VueValidator);
 
 // 路由器需要一个根组件。
 // 出于演示的目的，这里使用一个空的组件，直接使用 HTML 作为应用的模板
