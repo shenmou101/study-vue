@@ -1,4 +1,7 @@
+import Vue from "vue";
 import Vuex from "vuex";
+
+Vue.use(Vuex)
 
 // 如果在模块化构建系统中，请确保在开头调用了 Vue.use(Vuex)
 
@@ -10,10 +13,10 @@ const store = new Vuex.Store({
   //罗列所有可能改变state的方法
   mutations: {
   	//没有所谓的大写字母的Type了，就是一个个函数
-    increment (state) {
+    add (state) {
       state.count++
     },
-    minusL (state) {
+    minus (state) {
     	state.count--
     }
   }
