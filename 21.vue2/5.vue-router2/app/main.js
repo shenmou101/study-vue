@@ -2,7 +2,7 @@ var Vue = require("vue");
 var VueRouter = require("vue-router");
 // var routerConfig = require("./router.config.js");
 
-//使用插件 
+//使用插件 x
 Vue.use(VueRouter);
 
 const Foo = { template: '<div>foo</div>' }

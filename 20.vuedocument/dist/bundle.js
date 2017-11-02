@@ -571,8 +571,8 @@ module.exports = __webpack_require__(4);
 var Vue = __webpack_require__(5);
 var VueRouter = __webpack_require__(6);
 var routerConfig = __webpack_require__(7);
-var VueResource = __webpack_require__(43);
-var VueValidator = __webpack_require__(44);
+var VueResource = __webpack_require__(48);
+var VueValidator = __webpack_require__(49);
 
 //使用插件
 Vue.use(VueRouter);
@@ -581,7 +581,7 @@ Vue.use(VueValidator);
 
 // 路由器需要一个根组件。
 // 出于演示的目的，这里使用一个空的组件，直接使用 HTML 作为应用的模板
-var App = __webpack_require__(45);
+var App = __webpack_require__(50);
 
 // 创建一个路由器实例
 // 创建实例时可以传入配置参数进行定制，为保持简单，这里使用默认配置
@@ -13581,13 +13581,17 @@ var routerList = {
       },
       '/guoji': {
         name: 'guoji',
-        component: __webpack_require__(33)
+        component: __webpack_require__(38)
       }
     }
   },
   '/yinyue': {
     name: 'yinyue',
-    component: __webpack_require__(38),
+    component: __webpack_require__(43),
+  },
+  '/xinwen/yulu/gouwu': {
+    name: 'gouwu',
+    component: __webpack_require__(33),
   }
 };
 
@@ -13619,7 +13623,7 @@ if (false) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
-  var id = "_v-20031788/Xinwen.vue"
+  var id = "_v-180c9145/Xinwen.vue"
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
@@ -13706,7 +13710,7 @@ if (false) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
-  var id = "_v-8f22c02c/Junshi.vue"
+  var id = "_v-3f06861a/Junshi.vue"
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
@@ -13817,7 +13821,7 @@ if (false) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
-  var id = "_v-2522b54e/ItemBox.vue"
+  var id = "_v-10b5d43c/ItemBox.vue"
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
@@ -13917,7 +13921,7 @@ if (false) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
-  var id = "_v-3c2e4c76/Junshiwenzhang.vue"
+  var id = "_v-6d37507f/Junshiwenzhang.vue"
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
@@ -14009,7 +14013,7 @@ if (false) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
-  var id = "_v-5b9fa26e/Yule.vue"
+  var id = "_v-ad192492/Yule.vue"
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
@@ -14052,7 +14056,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -14068,7 +14072,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 /* 32 */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container\">\n  <h1>我是娱乐栏目</h1>\n</div>\n";
+module.exports = "\n<div class=\"container\">\n  <h1>我是娱乐栏目</h1>\n  <a v-link=\"{ name: 'gouwu' }\">购物</a>\n  <router-view></router-view>\n</div>\n";
 
 /***/ }),
 /* 33 */
@@ -14079,7 +14083,7 @@ var __vue_styles__ = {}
 __webpack_require__(34)
 __vue_script__ = __webpack_require__(36)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
-  console.warn("[vue-loader] app\\xinwen\\Guoji.vue: named exports in *.vue files are ignored.")}
+  console.warn("[vue-loader] app\\xinwen\\Gouwu.vue: named exports in *.vue files are ignored.")}
 __vue_template__ = __webpack_require__(37)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
@@ -14096,7 +14100,7 @@ if (false) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
-  var id = "_v-55de8037/Guoji.vue"
+  var id = "_v-b10ae30e/Gouwu.vue"
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
@@ -14120,8 +14124,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/_css-loader@0.28.7@css-loader/index.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/style-rewriter.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/selector.js?type=style&index=0!./Guoji.vue", function() {
-			var newContent = require("!!../../node_modules/_css-loader@0.28.7@css-loader/index.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/style-rewriter.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/selector.js?type=style&index=0!./Guoji.vue");
+		module.hot.accept("!!../../node_modules/_css-loader@0.28.7@css-loader/index.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/style-rewriter.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/selector.js?type=style&index=0!./Gouwu.vue", function() {
+			var newContent = require("!!../../node_modules/_css-loader@0.28.7@css-loader/index.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/style-rewriter.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/selector.js?type=style&index=0!./Gouwu.vue");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -14155,7 +14159,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 /* 37 */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container\">\n  <h1>我是国际栏目</h1>\n</div>\n";
+module.exports = "\n<div class=\"container\">\n  <h1>我是购物三级栏目</h1>\n</div>\n";
 
 /***/ }),
 /* 38 */
@@ -14166,7 +14170,7 @@ var __vue_styles__ = {}
 __webpack_require__(39)
 __vue_script__ = __webpack_require__(41)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
-  console.warn("[vue-loader] app\\yinyue\\Yinyue.vue: named exports in *.vue files are ignored.")}
+  console.warn("[vue-loader] app\\xinwen\\Guoji.vue: named exports in *.vue files are ignored.")}
 __vue_template__ = __webpack_require__(42)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
@@ -14183,7 +14187,7 @@ if (false) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
-  var id = "_v-203a1b3c/Yinyue.vue"
+  var id = "_v-7af7c3e4/Guoji.vue"
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
@@ -14207,8 +14211,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/_css-loader@0.28.7@css-loader/index.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/style-rewriter.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/selector.js?type=style&index=0!./Yinyue.vue", function() {
-			var newContent = require("!!../../node_modules/_css-loader@0.28.7@css-loader/index.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/style-rewriter.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/selector.js?type=style&index=0!./Yinyue.vue");
+		module.hot.accept("!!../../node_modules/_css-loader@0.28.7@css-loader/index.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/style-rewriter.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/selector.js?type=style&index=0!./Guoji.vue", function() {
+			var newContent = require("!!../../node_modules/_css-loader@0.28.7@css-loader/index.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/style-rewriter.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/selector.js?type=style&index=0!./Guoji.vue");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -14226,7 +14230,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -14242,10 +14246,97 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 /* 42 */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container\">\n  <h1>我是音乐栏目</h1>\n  <validator name=\"validation1\">\n    <form novalidate>\n      <div class=\"username-field\">\n        <label for=\"username\">username:</label>\n        <input id=\"username\" type=\"text\" v-validate:username=\"['required']\">\n      </div>\n      <div class=\"comment-field\">\n        <label for=\"comment\">comment:</label>\n        <input id=\"comment\" type=\"text\" v-validate:comment=\"{ maxlength: 256 , minlength: 6 }\">\n      </div>\n      <div class=\"errors\">\n        <p v-if=\"$validation1.username.required\">Required your name.</p>\n        <p v-if=\"$validation1.comment.maxlength\">Your comment is too long.</p>\n        <p v-if=\"$validation1.comment.minlength\">Your comment is too short.</p>\n      </div>\n      <input type=\"submit\" value=\"send\" v-if=\"$validation1.valid\">\n    </form>\n  </validator>\n</div>\n";
+module.exports = "\n<div class=\"container\">\n  <h1>我是国际栏目</h1>\n</div>\n";
 
 /***/ }),
 /* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_script__, __vue_template__
+var __vue_styles__ = {}
+__webpack_require__(44)
+__vue_script__ = __webpack_require__(46)
+if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
+  console.warn("[vue-loader] app\\yinyue\\Yinyue.vue: named exports in *.vue files are ignored.")}
+__vue_template__ = __webpack_require__(47)
+module.exports = __vue_script__ || {}
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+if (__vue_template__) {
+__vue_options__.template = __vue_template__
+}
+if (!__vue_options__.computed) __vue_options__.computed = {}
+Object.keys(__vue_styles__).forEach(function (key) {
+var module = __vue_styles__[key]
+__vue_options__.computed[key] = function () { return module }
+})
+if (false) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  var id = "_v-48483845/Yinyue.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, __vue_template__)
+  }
+})()}
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(45);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(1)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/_css-loader@0.28.7@css-loader/index.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/style-rewriter.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/selector.js?type=style&index=0!./Yinyue.vue", function() {
+			var newContent = require("!!../../node_modules/_css-loader@0.28.7@css-loader/index.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/style-rewriter.js!../../node_modules/_vue-loader@8.7.0@vue-loader/lib/selector.js?type=style&index=0!./Yinyue.vue");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports) {
+
+module.exports = "\n<div class=\"container\">\n  <h1>我是音乐栏目</h1>\n  <validator name=\"validation1\">\n    <form novalidate>\n      <div class=\"username-field\">\n        <label for=\"username\">username:</label>\n        <input id=\"username\" type=\"text\" v-validate:username=\"['required']\">\n      </div>\n      <div class=\"comment-field\">\n        <label for=\"comment\">comment:</label>\n        <input id=\"comment\" type=\"text\" v-validate:comment=\"{ maxlength: 256 , minlength: 6 }\">\n      </div>\n      <div class=\"errors\">\n        <p v-if=\"$validation1.username.required\">Required your name.</p>\n        <p v-if=\"$validation1.comment.maxlength\">Your comment is too long.</p>\n        <p v-if=\"$validation1.comment.minlength\">Your comment is too short.</p>\n      </div>\n      <input type=\"submit\" value=\"send\" v-if=\"$validation1.valid\">\n    </form>\n  </validator>\n</div>\n";
+
+/***/ }),
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15746,7 +15837,7 @@ module.exports = plugin;
 
 
 /***/ }),
-/* 44 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18362,17 +18453,17 @@ module.exports = plugin;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 45 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_script__, __vue_template__
 var __vue_styles__ = {}
-__webpack_require__(46)
-__webpack_require__(48)
-__vue_script__ = __webpack_require__(50)
+__webpack_require__(51)
+__webpack_require__(53)
+__vue_script__ = __webpack_require__(55)
 if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
   console.warn("[vue-loader] app\\App.vue: named exports in *.vue files are ignored.")}
-__vue_template__ = __webpack_require__(51)
+__vue_template__ = __webpack_require__(56)
 module.exports = __vue_script__ || {}
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -18388,7 +18479,7 @@ if (false) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
-  var id = "_v-32723ba1/App.vue"
+  var id = "_v-e5b3402c/App.vue"
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {
@@ -18397,13 +18488,13 @@ if (false) {(function () {  module.hot.accept()
 })()}
 
 /***/ }),
-/* 46 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(47);
+var content = __webpack_require__(52);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -18412,8 +18503,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/_css-loader@0.28.7@css-loader/index.js!../node_modules/_vue-loader@8.7.0@vue-loader/lib/style-rewriter.js?id=_v-32723ba1&scoped=true!../node_modules/_vue-loader@8.7.0@vue-loader/lib/selector.js?type=style&index=0!./App.vue", function() {
-			var newContent = require("!!../node_modules/_css-loader@0.28.7@css-loader/index.js!../node_modules/_vue-loader@8.7.0@vue-loader/lib/style-rewriter.js?id=_v-32723ba1&scoped=true!../node_modules/_vue-loader@8.7.0@vue-loader/lib/selector.js?type=style&index=0!./App.vue");
+		module.hot.accept("!!../node_modules/_css-loader@0.28.7@css-loader/index.js!../node_modules/_vue-loader@8.7.0@vue-loader/lib/style-rewriter.js?id=_v-e5b3402c&scoped=true!../node_modules/_vue-loader@8.7.0@vue-loader/lib/selector.js?type=style&index=0!./App.vue", function() {
+			var newContent = require("!!../node_modules/_css-loader@0.28.7@css-loader/index.js!../node_modules/_vue-loader@8.7.0@vue-loader/lib/style-rewriter.js?id=_v-e5b3402c&scoped=true!../node_modules/_vue-loader@8.7.0@vue-loader/lib/selector.js?type=style&index=0!./App.vue");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -18423,7 +18514,7 @@ if(false) {
 }
 
 /***/ }),
-/* 47 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(undefined);
@@ -18437,13 +18528,13 @@ exports.push([module.i, "\n", ""]);
 
 
 /***/ }),
-/* 48 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(49);
+var content = __webpack_require__(54);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(1)(content, {});
@@ -18463,7 +18554,7 @@ if(false) {
 }
 
 /***/ }),
-/* 49 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(undefined);
@@ -18477,17 +18568,17 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.contai
 
 
 /***/ }),
-/* 50 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 /***/ }),
-/* 51 */
+/* 56 */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div id=\"app\" _v-32723ba1=\"\">\n  <header _v-32723ba1=\"\">\n    <h1 _v-32723ba1=\"\">vue小站</h1>\n    <nav _v-32723ba1=\"\">\n      <!-- 使用指令 v-link 进行导航。 -->\n      <a v-link=\"{ name: 'xinwen' }\" _v-32723ba1=\"\">新闻</a>\n      <a v-link=\"{ name: 'yinyue' }\" _v-32723ba1=\"\">音乐</a>\n    </nav>\n  </header>\n  <!-- 路由外链 -->\n  <router-view _v-32723ba1=\"\"></router-view>\n</div>\n";
+module.exports = "\n<div id=\"app\" _v-e5b3402c=\"\">\n  <header _v-e5b3402c=\"\">\n    <h1 _v-e5b3402c=\"\">vue小站</h1>\n    <nav _v-e5b3402c=\"\">\n      <!-- 使用指令 v-link 进行导航。 -->\n      <a v-link=\"{ name: 'xinwen' }\" _v-e5b3402c=\"\">新闻</a>\n      <a v-link=\"{ name: 'yinyue' }\" _v-e5b3402c=\"\">音乐</a>\n    </nav>\n  </header>\n  <!-- 路由外链 -->\n  <router-view _v-e5b3402c=\"\"></router-view>\n</div>\n";
 
 /***/ })
 /******/ ]);

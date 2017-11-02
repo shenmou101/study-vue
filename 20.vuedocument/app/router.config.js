@@ -26,6 +26,10 @@ var routerList = {
   '/yinyue': {
     name: 'yinyue',
     component: require("./yinyue/Yinyue.vue"),
+  },
+  '/xinwen/yulu/gouwu': {
+    name: 'gouwu',
+    component: require("./xinwen/Gouwu.vue"),
   }
 };
 
